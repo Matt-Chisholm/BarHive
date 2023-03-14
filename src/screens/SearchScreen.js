@@ -1,12 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
-import { Button } from "@rneui/base";
 
-export default function HomeScreen() {
+export default function SearchScreen() {
   return (
     <View>
-      <Text>HomeScreen</Text>
-      <Button title='Go to Search' />
+      <Text>SearchScreen</Text>
     </View>
   );
 }
