@@ -1,5 +1,3 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ThemeProvider, createTheme } from "@rneui/themed";
@@ -21,6 +19,12 @@ const theme = createTheme({
     secondary: "#284B63",
   },
   mode: "dark",
+  fonts: {
+    Sono: "Sono",
+    SonoBold: "SonoBold",
+    Crimson: "Crimson",
+    CrimsonBold: "CrimsonBold",
+  },
 });
 
 const screenOptions = {
@@ -35,7 +39,7 @@ const screenOptions = {
 export default function App() {
   let [fontsLoaded] = useFonts({
     Sono: require("./assets/fonts/Sono_Proportional-Regular.ttf"),
-    SonoBold: require("./assets/fonts/Sono_Proportional-Bold.ttf"),
+    SonoBold: require("./assets/fonts/Sono_Proportional-SemiBold.ttf"),
     Crimson: require("./assets/fonts/CrimsonText-Regular.ttf"),
     CrimsonBold: require("./assets/fonts/CrimsonText-SemiBold.ttf"),
   });
