@@ -7,6 +7,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import FavoriteScreen from "./src/screens/FavoriteScreen";
 import SearchScreen from "./src/screens/SearchScreen";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { useFonts } from "expo-font";
 
 const Tab = createBottomTabNavigator();
 
@@ -32,6 +33,17 @@ const screenOptions = {
 };
 
 export default function App() {
+  let [fontsLoaded] = useFonts({
+    Sono: require("./assets/fonts/Sono_Proportional-Regular.ttf"),
+    SonoBold: require("./assets/fonts/Sono_Proportional-Bold.ttf"),
+    Crimson: require("./assets/fonts/CrimsonText-Regular.ttf"),
+    CrimsonBold: require("./assets/fonts/CrimsonText-SemiBold.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <NavigationContainer>
       <ThemeProvider theme={theme}>

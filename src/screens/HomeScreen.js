@@ -37,16 +37,15 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Text>Welcome to BarHive</Text>
-      <Text>Featured Cocktail</Text>
+      <Text h1>Featured Drink</Text>
       {cocktail.name && (
         <Card>
-          <Card.Title>{cocktail.name}</Card.Title>
+          <Card.Title>
+            <Text h2>{cocktail.name}</Text>
+          </Card.Title>
           <Card.Image source={{ uri: cocktail.image }} />
           <Card.Divider />
-          <Card.Content>
-            <Text>{cocktail.instructions}</Text>
-          </Card.Content>
-          <Card.Divider />
+          <Text>{cocktail.instructions}</Text>
         </Card>
       )}
     </View>
