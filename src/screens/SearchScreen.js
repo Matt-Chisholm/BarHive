@@ -22,7 +22,7 @@ export default function SearchScreen() {
     axios
       .request(options)
       .then(function (response) {
-        const drinks = response.data.drinks;
+        const drinks = response.data;
         console.log(drinks);
       })
       .catch(function (error) {
@@ -32,11 +32,16 @@ export default function SearchScreen() {
 
   return (
     <View style={styles.container}>
-      <Input placeholder='Search for a cocktail by ingredient' />
+      <Input
+        placeholder='Search for a cocktail by ingredient'
+        value={searchTerm}
+        onChange={(searchTerm) => setSearchTerm(searchTerm)}
+      />
       <Button
         buttonStyle={{ backgroundColor: "#F4F9E9" }}
         titleStyle={{ color: "black" }}
         title='Search'
+        onPress={search}
       />
     </View>
   );
