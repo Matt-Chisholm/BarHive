@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import React from "react";
+import { Card, Text, Tile } from "react-native-elements";
 
 export default function SearchScreen() {
   return (
@@ -14,6 +15,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#153243",
+    backgroundColor: "black",
   },
 });
