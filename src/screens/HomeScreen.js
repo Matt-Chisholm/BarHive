@@ -69,7 +69,6 @@ export default function HomeScreen() {
               fontFamily: "CrimsonBold",
               color: "#F4F9E9",
               fontWeight: "bold",
-              boxShadow: "0 0 10px #000",
               fontSize: 40,
               marginRight: 50,
               marginBottom: 50,
