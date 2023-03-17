@@ -3,6 +3,7 @@ import React from "react";
 import { Card, Text, Tile, Input, Button } from "react-native-elements";
 import axios from "axios";
 import { API_KEY, API_HOST } from "@env";
+import Feather from "react-native-vector-icons/Feather";
 
 export default function SearchScreen() {
   const [results, setResults] = React.useState([]);
@@ -36,6 +37,8 @@ export default function SearchScreen() {
         placeholder='Search for a cocktail by ingredient'
         autoComplete='off'
         value={searchTerm}
+        leftIcon={<Feather name='search' size={24} color='#F4F9E9' />}
+        inputStyle={{ color: "#F4F9E9" }}
         onChange={(searchTerm) => setSearchTerm(searchTerm)}
       />
       <Button
