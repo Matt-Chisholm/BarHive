@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 import { Card, Text, Tile, Input, Button } from "react-native-elements";
 import axios from "axios";
@@ -15,7 +15,7 @@ export default function SearchScreen() {
     setSearchTerm(formattedSearchTerm);
     axios
       .get(
-        `https://the-cocktail-db.p.rapidapi.com/search.php?i=${formattedSearchTerm}`,
+        `https://the-cocktail-db.p.rapidapi.com/filter.php?i=${formattedSearchTerm}`,
         {
           headers: {
             "x-rapidapi-key": API_KEY,
@@ -24,7 +24,8 @@ export default function SearchScreen() {
         }
       )
       .then(function (response) {
-        console.log(response.data);
+        setResults(response.data.drinks);
+        console.log(response.data.drinks);
       })
       .catch(function (error) {
         console.error(error);
@@ -48,6 +49,24 @@ export default function SearchScreen() {
         title='Search'
         onPress={search}
       />
+      {results.length > 0 && (
+        <Text style={{ color: "#F4F9E9" }}>
+          Showing results for "{searchTerm}"
+        </Text>
+      )}
+      <ScrollView>
+        {results.map((result) => (
+          <Card key={result.idDrink}>
+            <Card.Title>{result.strDrink}</Card.Title>
+            <Card.Divider />
+            <Tile
+              imageSrc={{ uri: result.strDrinkThumb }}
+              title={result.strDrink}
+              featured
+            />
+          </Card>
+        ))}
+      </ScrollView>
     </View>
   );
 }
