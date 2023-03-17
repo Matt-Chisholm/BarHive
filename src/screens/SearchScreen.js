@@ -56,8 +56,15 @@ export default function SearchScreen() {
       )}
       <ScrollView>
         {results.map((result) => (
-          <Card key={result.idDrink}>
-            <Card.Title>{result.strDrink}</Card.Title>
+          <Card
+            key={result.idDrink}
+            containerStyle={{
+              backgroundColor: "black",
+              width: "90%",
+              marginRight: "20%",
+            }}
+            wrapperStyle={{ backgroundColor: "black", width: "90%" }}>
+            <Card.Title h2>{result.strDrink}</Card.Title>
             <Card.Divider />
             <Tile
               imageSrc={{ uri: result.strDrinkThumb }}
