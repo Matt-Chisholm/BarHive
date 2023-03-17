@@ -34,6 +34,7 @@ export default function SearchScreen() {
     <View style={styles.container}>
       <Input
         placeholder='Search for a cocktail by ingredient'
+        autoComplete='off'
         value={searchTerm}
         onChange={(searchTerm) => setSearchTerm(searchTerm)}
       />
