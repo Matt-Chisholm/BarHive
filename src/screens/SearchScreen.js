@@ -40,7 +40,7 @@ export default function SearchScreen() {
         autoCapitalize='none'
         value={inputValue}
         leftIcon={<Feather name='search' size={24} color='#F4F9E9' />}
-        inputStyle={{ color: "#F4F9E9" }}
+        inputStyle={{ color: "#F4F9E9", marginTop: "25%" }}
         onChange={(event) => setInputValue(event.nativeEvent.text)}
       />
       <Button
