@@ -1,9 +1,9 @@
-import { View, StyleSheet, ScrollView } from "react-native";
 import React from "react";
+import { View, StyleSheet, ScrollView } from "react-native";
 import { Card, Text, Tile, Input, Button } from "react-native-elements";
+import Feather from "react-native-vector-icons/Feather";
 import axios from "axios";
 import { API_KEY, API_HOST } from "@env";
-import Feather from "react-native-vector-icons/Feather";
 
 export default function SearchScreen() {
   const [results, setResults] = React.useState([]);
@@ -39,33 +39,39 @@ export default function SearchScreen() {
         autoComplete='off'
         autoCapitalize='none'
         value={inputValue}
-        leftIcon={<Feather name='search' size={24} color='#F4F9E9' />}
-        inputStyle={{ color: "#F4F9E9", marginTop: "25%" }}
+        leftIcon={
+          <Feather
+            name='search'
+            size={24}
+            color='#F4F9E9'
+            style={styles.icon}
+          />
+        }
+        inputContainerStyle={styles.inputContainer}
+        inputStyle={styles.input}
         onChange={(event) => setInputValue(event.nativeEvent.text)}
       />
       <Button
-        buttonStyle={{ backgroundColor: "#F4F9E9" }}
-        titleStyle={{ color: "black" }}
         title='Search'
+        buttonStyle={styles.button}
+        titleStyle={styles.buttonTitle}
         onPress={search}
       />
       {results.length > 0 && (
-        <Text style={{ color: "#F4F9E9" }}>
+        <Text style={styles.resultsText}>
           Showing results for "{searchTerm}"
         </Text>
       )}
-      <ScrollView>
+      <ScrollView style={styles.scrollView}>
         {results.map((result) => (
           <Card
             key={result.idDrink}
-            containerStyle={{
-              backgroundColor: "black",
-              width: "90%",
-              marginRight: "20%",
-            }}
-            wrapperStyle={{ backgroundColor: "black", width: "90%" }}>
-            <Card.Title h2>{result.strDrink}</Card.Title>
-            <Card.Divider />
+            containerStyle={styles.cardContainer}
+            wrapperStyle={styles.cardWrapper}>
+            <Card.Title h4 style={styles.cardTitle}>
+              {result.strDrink}
+            </Card.Title>
+            <Card.Divider style={styles.cardDivider} />
             <Tile
               imageSrc={{ uri: result.strDrinkThumb }}
               title={result.strDrink}
@@ -83,6 +89,55 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "black",
+    backgroundColor: "#1C1C1E",
+  },
+  inputContainer: {
+    backgroundColor: "#2C2C2E",
+    borderRadius: 10,
+    borderBottomWidth: 0,
+    marginBottom: "5%",
+    marginTop: "45%",
+    width: "85%",
+    height: "6%",
+    alignSelf: "center",
+  },
+  input: {
+    color: "#F4F9E9",
+    marginTop: "25%",
+    marginLeft: "5%",
+  },
+  button: {
+    backgroundColor: "#F4F9E9",
+    borderRadius: 10,
+    width: "85%",
+    height: "6%",
+    alignSelf: "center",
+  },
+  buttonTitle: {
+    color: "#1C1C1E",
+  },
+  scrollView: {},
+  resultsText: {
+    color: "#F4F9E9",
+    fontSize: 18,
+    marginTop: "5%",
+    marginBottom: "5%",
+  },
+  cardContainer: {
+    backgroundColor: "#2C2C2E",
+    borderRadius: 10,
+    width: "85%",
+    height: "auto",
+    alignSelf: "center",
+    marginBottom: "5%",
+  },
+  cardWrapper: {
+    backgroundColor: "#2C2C2E",
+  },
+  cardTitle: {
+    color: "#F4F9E9",
+  },
+  cardDivider: {
+    backgroundColor: "#F4F9E9",
   },
 });
