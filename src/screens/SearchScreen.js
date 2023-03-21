@@ -91,6 +91,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#1C1C1E",
   },
+  george 17
+  
   inputContainer: {
     backgroundColor: "#2C2C2E",
     borderRadius: 10,
