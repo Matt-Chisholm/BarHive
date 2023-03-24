@@ -64,7 +64,7 @@ export default function HomeScreen() {
         <View>
           <Tile
             imageSrc={{ uri: cocktail.image }}
-            title={cocktail.name}
+            title={""}
             titleStyle={{
               fontFamily: "CrimsonBold",
               color: "#F4F9E9",
@@ -82,6 +82,8 @@ export default function HomeScreen() {
           <Card
             wrapperStyle={{ backgroundColor: "black" }}
             containerStyle={{ backgroundColor: "black" }}>
+            <Card.Title style={styles.cardName}>{cocktail.name}</Card.Title>
+            <Card.Divider />
             <Card.Title style={styles.cardHeader}>Ingredients</Card.Title>
             <Card.Divider />
             <View style={{ flexDirection: "column" }}>
@@ -114,8 +116,13 @@ const styles = StyleSheet.create({
     marginTop: 20,
     color: "#F4F9E9",
   },
-  cardHeader: {
+  cardName: {
     fontFamily: "CrimsonBold",
+    color: "#EEF0EB",
+    fontSize: 30,
+  },
+  cardHeader: {
+    fontFamily: "Crimson",
     color: "#F4F9E9",
     fontSize: 30,
   },
