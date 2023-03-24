@@ -5,7 +5,7 @@ import Feather from "react-native-vector-icons/Feather";
 import axios from "axios";
 import { API_KEY, API_HOST } from "@env";
 
-export default function SearchScreen() {
+export default function SearchScreen({ navigation }) {
   const [results, setResults] = React.useState([]);
   const [searchTerm, setSearchTerm] = React.useState("");
   const [inputValue, setInputValue] = React.useState("");
@@ -79,6 +79,11 @@ export default function SearchScreen() {
               title={result.strDrink}
               width={300}
               featured
+              onPress={() => {
+                navigation.navigate("Cocktail", {
+                  cocktailID: result.idDrink,
+                });
+              }}
             />
           </Card>
         ))}

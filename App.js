@@ -1,13 +1,16 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 import { ThemeProvider, createTheme } from "@rneui/themed";
 import HomeScreen from "./src/screens/HomeScreen";
 import FavoriteScreen from "./src/screens/FavoriteScreen";
 import SearchScreen from "./src/screens/SearchScreen";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import CocktailScreen from "./src/screens/CocktailScreen";
 import { useFonts } from "expo-font";
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const theme = createTheme({
   lightColors: {
@@ -67,8 +70,7 @@ export default function App() {
             }}
           />
           <Tab.Screen
-            name='Search'
-            component={SearchScreen}
+            name='SearchTab'
             options={{
               tabBarIcon: ({ color, size }) => (
                 <Ionicons
@@ -78,8 +80,26 @@ export default function App() {
                 />
               ),
               headerShown: false,
-            }}
-          />
+            }}>
+            {(props) => (
+              <Stack.Navigator>
+                <Stack.Screen
+                  name='Search'
+                  component={SearchScreen}
+                  options={{
+                    headerShown: false,
+                  }}
+                />
+                <Stack.Screen
+                  name='Cocktail'
+                  component={CocktailScreen}
+                  options={{
+                    headerShown: false,
+                  }}
+                />
+              </Stack.Navigator>
+            )}
+          </Tab.Screen>
           <Tab.Screen
             name='Favorite'
             component={FavoriteScreen}
