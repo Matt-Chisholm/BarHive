@@ -23,7 +23,25 @@ export default function CocktailScreen({ route }) {
     axios
       .request(options)
       .then(function (response) {
-        console.log(response);
+        const drink = response.data.drinks[0];
+        const cocktail = {
+          name: drink.strDrink,
+          image: drink.strDrinkThumb,
+          instructions: drink.strInstructions,
+          ingredients: [
+            drink.strIngredient1,
+            drink.strIngredient2,
+            drink.strIngredient3,
+            drink.strIngredient4,
+            drink.strIngredient5,
+            drink.strIngredient6,
+            drink.strIngredient7,
+            drink.strIngredient8,
+            drink.strIngredient9,
+            drink.strIngredient10,
+          ],
+        };
+        setCocktail(cocktail);
       })
       .catch(function (error) {
         console.error(error);
@@ -32,7 +50,21 @@ export default function CocktailScreen({ route }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Test</Text>
+      <Tile
+        imageSrc={{ uri: cocktail.image }}
+        title={cocktail.name}
+        featured
+        caption={cocktail.instructions}
+      />
+      <Card>
+        <Card.Title>Ingredients</Card.Title>
+        <Card.Divider />
+        {cocktail.ingredients.map((ingredient, index) => {
+          if (ingredient) {
+            return <Text key={index}>{ingredient}</Text>;
+          }
+        })}
+      </Card>
     </View>
   );
 }
