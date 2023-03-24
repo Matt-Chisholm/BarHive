@@ -1,10 +1,10 @@
 import { StyleSheet, View, ScrollView } from "react-native";
-import { Card, Text, Tile } from "react-native-elements";
+import { Card, Text, Tile, Button } from "react-native-elements";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { API_HOST, API_KEY } from "@env";
 
-export default function CocktailScreen({ route }) {
+export default function CocktailScreen({ route, navigation }) {
   const [cocktail, setCocktail] = useState({});
 
   const cocktailID = route.params.cocktailID;
@@ -50,9 +50,21 @@ export default function CocktailScreen({ route }) {
 
   return (
     <View style={styles.container}>
+      <View style={styles.divider}></View>
+      <Button
+        title='Back to Search'
+        buttonStyle={styles.button}
+        color='#3D405B'
+        onPress={() => navigation.navigate("Search")}
+      />
+
+      <Text h1 style={styles.header}>
+        {cocktail.name}
+      </Text>
+
       <Tile
         imageSrc={{ uri: cocktail.image }}
-        title={cocktail.name}
+        title={""}
         featured
         caption={cocktail.instructions}
       />
@@ -79,5 +91,13 @@ const styles = StyleSheet.create({
   header: {
     color: "#3D405B",
     marginBottom: 20,
+  },
+  button: {
+    marginBottom: 20,
+    marginTop: 20,
+    backgroundColor: "#3D405B",
+  },
+  divider: {
+    height: 60,
   },
 });
