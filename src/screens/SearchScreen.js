@@ -35,7 +35,7 @@ export default function SearchScreen() {
   return (
     <View style={styles.container}>
       <Input
-        placeholder='Search for a cocktail by ingredient'
+        placeholder='Search by ingredient'
         autoComplete='off'
         autoCapitalize='none'
         value={inputValue}
@@ -98,12 +98,11 @@ const styles = StyleSheet.create({
     marginBottom: "5%",
     marginTop: "35%",
     width: "85%",
-    height: "6%",
+    height: "17%",
     alignSelf: "center",
   },
   input: {
     color: "#F4F9E9",
-    marginTop: "25%",
     marginLeft: "5%",
   },
   button: {
