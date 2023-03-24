@@ -155,7 +155,5 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     marginBottom: "-30%",
     borderRadius: 10,
-    borderBottomColor: "white",
-    borderBottomWidth: 1,
   },
 });
