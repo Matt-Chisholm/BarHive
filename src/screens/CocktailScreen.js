@@ -9,6 +9,8 @@ export default function CocktailScreen({ route, navigation }) {
 
   const cocktailID = route.params.cocktailID;
 
+  const bull = ''
+
   const options = {
     method: "GET",
     url: "https://the-cocktail-db.p.rapidapi.com/lookup.php",
