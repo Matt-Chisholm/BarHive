@@ -9,7 +9,7 @@ export default function CocktailScreen({ route, navigation }) {
 
   const cocktailID = route.params.cocktailID;
 
-  const bull = ''
+  const bull = "\u2022";
 
   const options = {
     method: "GET",
