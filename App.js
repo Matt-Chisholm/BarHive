@@ -14,12 +14,12 @@ const Stack = createStackNavigator();
 
 const theme = createTheme({
   lightColors: {
-    primary: "#F4F9E9",
-    secondary: "#EEF0EB",
+    primary: "#D9C5B2",
+    secondary: "#F3F3F4",
   },
   darkColors: {
-    primary: "#153243",
-    secondary: "#284B63",
+    primary: "#144110F",
+    secondary: "#34312D",
   },
   mode: "dark",
   fonts: {
