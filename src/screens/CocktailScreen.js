@@ -73,12 +73,27 @@ export default function CocktailScreen({ route, navigation }) {
         <Card>
           <Card.Title>How to make:</Card.Title>
           <Card.Divider />
+          <View style={{ flexDirection: "row", marginBottom: 10 }}>
+            <Text style={{ flex: 1 }}>Ingredients:</Text>
+          </View>
           {cocktail.ingredients &&
             cocktail.ingredients.map((ingredient, index) => {
               if (ingredient !== null) {
-                return <Text key={index}>{ingredient}</Text>;
+                return (
+                  <View
+                    key={index}
+                    style={{
+                      flexDirection: "row",
+                      display: "flex",
+                      marginBottom: 5,
+                      paddingLeft: 80,
+                    }}>
+                    <Text style={{ flex: 1 }}>{ingredient}</Text>
+                  </View>
+                );
               }
             })}
+          <Card.Divider />
           <Text>{cocktail.instructions}</Text>
         </Card>
       </ScrollView>
