@@ -33,8 +33,8 @@ const theme = createTheme({
 const screenOptions = {
   headerShown: false,
   tabBarStyle: {
-    backgroundColor: theme.lightColors.primary,
-    color: theme.lightColors.secondary,
+    backgroundColor: theme.darkColors.secondary,
+    color: theme.darkColors.primary,
     height: 80,
   },
 };
@@ -62,7 +62,7 @@ export default function App() {
               tabBarIcon: ({ color, size }) => (
                 <Ionicons
                   name='home'
-                  color={theme.darkColors.secondary}
+                  color={theme.lightColors.primary}
                   size={size}
                 />
               ),
@@ -75,7 +75,7 @@ export default function App() {
               tabBarIcon: ({ color, size }) => (
                 <Ionicons
                   name='search'
-                  color={theme.darkColors.secondary}
+                  color={theme.lightColors.primary}
                   size={size}
                 />
               ),
@@ -107,7 +107,7 @@ export default function App() {
               tabBarIcon: ({ color, size }) => (
                 <Ionicons
                   name='heart'
-                  color={theme.darkColors.secondary}
+                  color={theme.lightColors.primary}
                   size={size}
                 />
               ),

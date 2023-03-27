@@ -80,8 +80,8 @@ export default function HomeScreen() {
             featured
           />
           <Card
-            wrapperStyle={{ backgroundColor: "black" }}
-            containerStyle={{ backgroundColor: "black" }}>
+            wrapperStyle={{ backgroundColor: "#14110F", marginBottom: 20 }}
+            containerStyle={{ backgroundColor: "#14110F", marginBottom: 20 }}>
             <Card.Title style={styles.cardName}>{cocktail.name}</Card.Title>
             <Card.Divider />
             <Card.Title style={styles.cardHeader}>Ingredients</Card.Title>
@@ -109,12 +109,12 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "black",
+    backgroundColor: "#34312D",
   },
   header: {
     fontFamily: "CrimsonBold",
     marginTop: 20,
-    color: "#F4F9E9",
+    color: "#D9C5B2",
   },
   cardName: {
     fontFamily: "CrimsonBold",
@@ -123,19 +123,19 @@ const styles = StyleSheet.create({
   },
   cardHeader: {
     fontFamily: "Crimson",
-    color: "#F4F9E9",
+    color: "#D9C5B2",
     fontSize: 30,
   },
   cardText: {
     fontFamily: "Crimson",
-    color: "#F4F9E9",
+    color: "#D9C5B2",
     fontSize: 20,
   },
   cardList: {
     fontFamily: "Crimson",
-    color: "#F4F9E9",
+    color: "#D9C5B2",
     fontSize: 18,
     marginLeft: 20,
-    marginBottom: 10,
+    marginBottom: 30,
   },
 });
