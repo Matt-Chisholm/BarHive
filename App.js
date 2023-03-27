@@ -70,7 +70,7 @@ export default function App() {
             }}
           />
           <Tab.Screen
-            name='SearchTab'
+            name='Search'
             options={{
               tabBarIcon: ({ color, size }) => (
                 <Ionicons
