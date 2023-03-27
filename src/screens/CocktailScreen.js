@@ -41,6 +41,7 @@ export default function CocktailScreen({ route, navigation }) {
             drink.strIngredient10,
           ],
         };
+        console.log(cocktail);
         setCocktail(cocktail);
       })
       .catch(function (error) {
@@ -66,16 +67,12 @@ export default function CocktailScreen({ route, navigation }) {
         imageSrc={{ uri: cocktail.image }}
         title={""}
         featured
-        caption={cocktail.instructions}
+        caption={""}
       />
       <Card>
-        <Card.Title>Ingredients</Card.Title>
+        <Card.Title>How to make:</Card.Title>
         <Card.Divider />
-        {cocktail.ingredients.map((ingredient, index) => {
-          if (ingredient) {
-            return <Text key={index}>{ingredient}</Text>;
-          }
-        })}
+        <Text>{cocktail.instructions}</Text>
       </Card>
     </View>
   );
