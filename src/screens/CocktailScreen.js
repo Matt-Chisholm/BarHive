@@ -69,11 +69,19 @@ export default function CocktailScreen({ route, navigation }) {
         featured
         caption={""}
       />
-      <Card>
-        <Card.Title>How to make:</Card.Title>
-        <Card.Divider />
-        <Text>{cocktail.instructions}</Text>
-      </Card>
+      <ScrollView>
+        <Card>
+          <Card.Title>How to make:</Card.Title>
+          <Card.Divider />
+          {cocktail.ingredients &&
+            cocktail.ingredients.map((ingredient, index) => {
+              if (ingredient !== null) {
+                return <Text key={index}>{ingredient}</Text>;
+              }
+            })}
+          <Text>{cocktail.instructions}</Text>
+        </Card>
+      </ScrollView>
     </View>
   );
 }
@@ -81,7 +89,7 @@ export default function CocktailScreen({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F4F9E9",
+    backgroundColor: "#D9C5B2",
     alignItems: "center",
     justifyContent: "center",
   },
