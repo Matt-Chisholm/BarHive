@@ -84,7 +84,7 @@ export default function App() {
             {(props) => (
               <Stack.Navigator>
                 <Stack.Screen
-                  name='Search'
+                  name='SearchScreen'
                   component={SearchScreen}
                   options={{
                     headerShown: false,

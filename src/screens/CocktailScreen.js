@@ -55,7 +55,7 @@ export default function CocktailScreen({ route, navigation }) {
         title='Back to Search'
         buttonStyle={styles.button}
         color='#3D405B'
-        onPress={() => navigation.navigate("Search")}
+        onPress={() => navigation.navigate("SearchScreen")}
       />
 
       <Text h1 style={styles.header}>
