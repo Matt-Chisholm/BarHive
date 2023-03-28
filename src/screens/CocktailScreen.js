@@ -85,7 +85,7 @@ export default function CocktailScreen({ route, navigation }) {
                     style={{
                       flexDirection: "row",
                       display: "flex",
-                      marginBottom: 5,
+                      marginBottom: 10,
                       paddingLeft: 80,
                     }}>
                     <Text style={{ flex: 1 }}>{ingredient}</Text>
