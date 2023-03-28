@@ -41,7 +41,6 @@ export default function CocktailScreen({ route, navigation }) {
             drink.strIngredient10,
           ],
         };
-        console.log(cocktail);
         setCocktail(cocktail);
       })
       .catch(function (error) {
