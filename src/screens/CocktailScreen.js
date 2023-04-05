@@ -19,20 +19,6 @@ export default function CocktailScreen({ route, navigation }) {
     },
   };
 
-  const getIngredients = (drink) => {
-    const ingredients = [];
-    for (let i = 1; i <= 15; i++) {
-      if (drink[`strIngredient${i}`]) {
-        ingredients.push(
-          `${drink[`strIngredient${i}`]} - ${drink[`strMeasure${i}`]}`
-        );
-      } else {
-        break;
-      }
-    }
-    return ingredients;
-  };
-
   useEffect(() => {
     axios
       .request(options)
