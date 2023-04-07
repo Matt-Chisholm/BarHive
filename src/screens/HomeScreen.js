@@ -19,8 +19,6 @@ export default function HomeScreen() {
     },
   };
 
-  
-
   React.useEffect(() => {
     axios
       .request(options)
